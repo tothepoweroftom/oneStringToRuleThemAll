@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>membraneSynth</title>
+    <script src="libraries/nexusUI.js" type="text/javascript"></script>
+    <script src="libraries/Tone.min.js" type="text/javascript"></script>
+
+     <!-- <script src="libraries/p5.dom.js" type="text/javascript"></script>
+     <script src="libraries/p5.sound.js" type="text/javascript"></script> -->
+
+
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
+  </head>
+  <body style="background-color: #000000;">
+<div id="container">
+    <canvas id="string1" nx="string" ></canvas>
+    <div id = "dials">
+      <canvas nx="dial" ></canvas>
+      <canvas nx="dial" ></canvas>
+      <canvas nx="dial" ></canvas>
+      <canvas nx="dial" ></canvas>
+
+
+    </div>
+</div>
+    <!-- <canvas id="env1" nx="envelope" ></canvas> -->
+    <style>
+    #container {
+      position: fixed;
+
+      width: 100%;
+
+      top:25%;
+      left: 25%;
+    }
+
+    #string1 {
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      background-color: black;
+
+      }
+      #dials {
+        position: relative;;
+        left:100px;
+
+      }
+     </style>
+
+  </body>
+</html>

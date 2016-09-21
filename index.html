@@ -5,6 +5,8 @@
     <title>membraneSynth</title>
     <script src="libraries/nexusUI.js" type="text/javascript"></script>
     <script src="libraries/Tone.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./libraries/jquery-1.7.1.min.js"></script>
+
 
      <!-- <script src="libraries/p5.dom.js" type="text/javascript"></script>
      <script src="libraries/p5.sound.js" type="text/javascript"></script> -->
@@ -17,17 +19,26 @@
   <body style="background-color: #000000;">
 <div id="container">
     <canvas id="string1" nx="string" ></canvas>
+    <!-- <canvas id="string1" nx="keyboards=" ></canvas> -->
+
     <div id = "dials">
-      <canvas nx="dial" ></canvas>
-      <canvas nx="dial" ></canvas>
-      <canvas nx="dial" ></canvas>
-      <canvas nx="dial" ></canvas>
+      <!-- <canvas id = "dial" nx="dial" ></canvas>
+      <canvas id = "dial" nx="dial" ></canvas>
+      <canvas id = "dial" nx="dial" ></canvas>
+      <canvas id = "dial" nx="dial" ></canvas> -->
 
 
     </div>
 </div>
     <!-- <canvas id="env1" nx="envelope" ></canvas> -->
     <style>
+
+    canvas {
+  width: 100%;
+  height: 100%;
+}
+
+
     #container {
       position: fixed;
 
@@ -46,8 +57,14 @@
       }
       #dials {
         position: relative;;
-        left:100px;
+        align-self: center;
 
+      }
+
+      #dial {
+        position: absolute;
+margin-left: 4%;
+margin-right: 4%;
       }
      </style>
 

@@ -25,6 +25,8 @@ var waveshaper = Tone.context.createWaveShaper();
 
 var pitchShift = 7;
 
+var meter = new Tone.Meter("level");
+
 
 
 
@@ -33,7 +35,7 @@ var reverb = new Tone.Freeverb(0.9, 20000);
 var wet = 0.5;
 reverb.wet.value = wet;
 
-var synth = new Tone.PluckSynth().chain(compressor, waveshaper, tremolo, feedbackDelay, delay, reverb, Tone.Master);
+var synth = new Tone.PluckSynth().chain(compressor, tremolo, feedbackDelay, delay, reverb, meter, Tone.Master);
 var noiseSynth = new Tone.NoiseSynth()
 synth.attackNoise.value = 2;
 // synth.volume.value = -6;
@@ -82,31 +84,31 @@ nx.colorize('fill',"#000");
 
     }
   })
-    dial1.on('*', function(data){
-      waveshaper.curve = makeDistortionCurve(nx.scale(data.value, 0, 1, 0, 0.5));
-
-
-    })
-
-    dial2.on('*', function(data){
-      synth.resonance.value = nx.scale(data.value, 0, 1, 0, 0.9);
-
-
-    })
-
-    dial3.on('*', function(data){
-          tremolo.frequency.value = nx.scale(data.value, 0, 1, 0, 10000);
-
-
-    })
-
-
-        dial4.on('*', function(data){
-               feedbackDelay.wet = data.value;
-               delay.wet = data.value;
-
-
-        })
+    // dial1.on('*', function(data){
+    //   waveshaper.curve = makeDistortionCurve(nx.scale(data.value, 0, 1, 0, 0.5));
+    //
+    //
+    // })
+    //
+    // dial2.on('*', function(data){
+    //   synth.resonance.value = nx.scale(data.value, 0, 1, 0, 0.9);
+    //
+    //
+    // })
+    //
+    // dial3.on('*', function(data){
+    //       tremolo.frequency.value = nx.scale(data.value, 0, 1, 0, 10000);
+    //
+    //
+    // })
+    //
+    //
+    //     dial4.on('*', function(data){
+    //            feedbackDelay.wet = data.value;
+    //            delay.wet = data.value;
+    //
+    //
+    //     })
 
 }
 
